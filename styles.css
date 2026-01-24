@@ -57,7 +57,7 @@ body {
   padding: 20px;
   display: flex;
   flex-grow: 1;
-  height: auto; /* Ajustement de la hauteur pour permettre le scroll complet */
+  height: auto;
 }
 
 .projects {
@@ -79,23 +79,22 @@ body {
   object-fit: cover;
 }
 
-/* Supprimer le soulignement des liens des projets */
 .projects-column a {
-  text-decoration: none; /* Enlève le soulignement pour les liens */
-  color: black; /* Définit la couleur noire pour le lien */
+  text-decoration: none;
+  color: black;
 }
 
 .projects-column a:hover {
-  text-decoration: none; /* S'assure que le lien ne soit pas souligné au survol */
-  color: black; /* La couleur reste noire au survol */
+  text-decoration: none;
+  color: black;
 }
 
 .project-title {
-  font-size: 1.3vw; /* Taille du texte */
-  margin-top: 5px; /* Petit espace entre l'image et le texte */
-  text-align: center; /* Centre le texte sous l'image */
+  font-size: 1.3vw;
+  margin-top: 5px;
+  text-align: center;
   margin-bottom: 0.5vw;
-  color: black; /* Assure que le texte est en noir */
+  color: black;
 }
 
 /* Footer */
@@ -116,7 +115,7 @@ body {
 }
 
 .projects-column img {
-  cursor: pointer; /* Change le curseur en main pour montrer que c'est cliquable */
+  cursor: pointer;
 }
 
 /* Organisation en 2 colonnes pour le titre et la description */
@@ -142,7 +141,7 @@ body {
 /* Organisation des images et du texte */
 .project-images {
   display: flex;
-  flex-direction: column; /* S'assure que les textes sont ensemble avant les images */
+  flex-direction: column;
   width: 100%;
 }
 
@@ -170,7 +169,7 @@ body {
 }
 
 .text-container .column:last-child .text {
-  font-size: 0.75vw; /* Taille du texte plus petite */
+  font-size: 0.75vw;
   line-height: 1.5;
 }
 
@@ -192,14 +191,25 @@ body {
   height: auto;
   object-fit: cover;
 }
-/* Organisation des images en 3 colonnes */
-/* Organisation des images en 3 colonnes (au milieu) */
-.image-three-columns {
-  display: flex;
-  justify-content: space-between; /* Répartit uniformément les colonnes */
-  width: 100%;
+
+/* Classe spéciale pour images full-width (comme prez.png) */
+.full-width-column {
+  flex: 1 1 100%;
+  width: 100% !important;
 }
 
+.full-width-column img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Organisation des images en 3 colonnes */
+.image-three-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
 .image-three-columns img {
   width: 100%;
@@ -209,9 +219,9 @@ body {
 
 .profile-container {
   display: flex;
-  flex-direction: row; /* Garde l'image à gauche et le texte à droite */
+  flex-direction: row;
   align-items: flex-start;
-  padding: 0; /* Supprime tout espace autour */
+  padding: 0;
   margin: 0;
 }
 
@@ -229,7 +239,7 @@ body {
   width: 50%;
   font-size: 1.2vw;
   line-height: 1.5;
-  padding-left: 2vw; /* Ajoute un espace entre l'image et le texte */
+  padding-left: 2vw;
 }
 
 .cv-button {
@@ -247,4 +257,3 @@ body {
 .cv-button:hover {
   background-color: grey;
 }
-

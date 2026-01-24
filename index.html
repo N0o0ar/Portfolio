@@ -6,7 +6,7 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
   <div class="container">
     
     <!-- Sidebar -->
@@ -24,19 +24,33 @@
       <!-- COLONNE GAUCHE -->
       <div class="projects-column">
 
-        <!-- L’ŒIL (haut gauche) -->
         <a href="projets/loeil.html">
-          <img src="Images/loeil/loeil.jpg" alt="L’ŒIL">
+          <img
+            src="Images/loeil/loeil.jpg"
+            alt="L’ŒIL"
+            data-static="Images/loeil/loeil.jpg"
+            data-gif="Vidéos/loeil.gif"
+            class="hover-gif">
           <p class="project-title">L’ŒIL</p>
         </a>
 
         <a href="projets/projet2.html">
-          <img src="Images/Milieu/couv.jpg" alt="Imprimer le Milieu">
+          <img
+            src="Images/Milieu/couv.jpg"
+            alt="Imprimer le Milieu"
+            data-static="Images/Milieu/couv.jpg"
+            data-gif="Images/Milieu/2emecouv.jpg"
+            class="hover-gif">
           <p class="project-title">IMPRIMER LE MILIEU</p>
         </a>
 
         <a href="projets/projet3.html">
-          <img src="Images/Fantasmagorie/couv.jpg" alt="Fantasmago-Série">
+          <img
+            src="Images/Fantasmagorie/couv.jpg"
+            alt="Fantasmago-Série"
+            data-static="Images/Fantasmagorie/couv.jpg"
+            data-gif="Vidéos/couv.gif"
+            class="hover-gif">
           <p class="project-title">FANTASMAGO-SÉRIE</p>
         </a>
 
@@ -45,24 +59,53 @@
       <!-- COLONNE DROITE -->
       <div class="projects-column">
 
-        <!-- FALAISE (haut droite) -->
         <a href="https://n0o0ar.github.io/FALAISE/" target="_blank">
-          <img src="Images/Falaise/falaise.jpg" alt="Falaise">
+          <img
+            src="Images/Falaise/falaise.jpg"
+            alt="Falaise"
+            data-static="Images/Falaise/falaise.jpg"
+            data-gif="Vidéos/falaise.gif"
+            class="hover-gif">
           <p class="project-title">FALAISE</p>
         </a>
 
+        <a href="projets/ziem.html">
+          <img
+            src="Images/ziem/ziem.png"
+            alt="Identité visuelle - Musée Ziem"
+            data-static="Images/ziem/ziem.png"
+            data-gif="Images/ziem/ziem.gif"
+            class="hover-gif">
+          <p class="project-title">IDENTITÉ VISUELLE - MUSÉE ZIEM</p>
+        </a>
+
         <a href="projets/projet4.html">
-          <img src="Images/Epuisement/front.jpg" alt="Épuisement">
+          <img
+            src="Images/Epuisement/front.jpg"
+            alt="Épuisement"
+            data-static="Images/Epuisement/front.jpg"
+            data-gif="Vidéos/front.gif"
+            class="hover-gif">
           <p class="project-title">ÉPUISEMENT DE L'IMAGE PAR L'IMAGE ET PAR LE TEXTE</p>
         </a>
 
         <a href="projets/projet5.html">
-          <img src="Images/Eau/carte postale.jpg" alt="Maison de l'eau">
+          <img
+            src="Images/Eau/carte postale.jpg"
+            alt="Maison de l'eau"
+            data-static="Images/Eau/carte postale.jpg"
+            data-gif="Vidéos/eau.gif"
+            class="hover-gif">
           <p class="project-title">IDENTITÉ VISUELLE FICTIVE - MAISON DE L'EAU (2023)</p>
         </a>
 
         <a href="projets/projet6.html">
-          <img src="Images/Sample/couv.jpg" alt="Sample">
+          <img
+            src="Images/Sample/couv.jpg"
+            alt="Sample"
+            data-static="Images/Sample/couv.jpg"
+            data-gif="Vidéos/Anim-sample.gif"
+            class="hover-gif">
           <p class="project-title">JOIN THE PLAYLIST - SAMPLE</p>
         </a>
 
@@ -73,6 +116,24 @@
   <footer class="footer">
     <a href="#top" id="scroll-to-top">↑REVENIR EN HAUT↑</a>
   </footer>
+
+  <!-- Hover GIF global uniquement HTML -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.hover-gif').forEach(img => {
+        const staticSrc = img.dataset.static;
+        const gifSrc = img.dataset.gif;
+
+        img.addEventListener('mouseenter', () => {
+          img.src = gifSrc + '?t=' + Date.now();
+        });
+
+        img.addEventListener('mouseleave', () => {
+          img.src = staticSrc;
+        });
+      });
+    });
+  </script>
 
   <script src="scripts.js"></script>
 </body>
